@@ -1,0 +1,25 @@
+.site__error {
+    background-color: $color-primary;
+    color: $color-lighter;
+
+    .container {
+        margin-top: 8%;
+    }
+
+    .site__error-message {
+        @include noselect();
+        font-size: 15em;
+        letter-spacing: 0.2em;
+        opacity: 0.8;
+    }
+
+    .site__error-links {
+        margin-top: 2em;
+
+        a {
+            color: $color-lighter;
+            font-size: 1.3em;
+            font-weight: 100;
+        }
+    }
+}

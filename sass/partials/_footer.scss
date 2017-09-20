@@ -1,0 +1,22 @@
+footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: $fg-footer;
+}
+
+footer {
+    &.article__footer {
+        background-color: rgba(139, 159, 165, 0.17);
+        padding-bottom: 40px;
+
+        h6 {
+            font-size: 2.3em;
+            font-weight: 100;
+        }
+
+        .blog__simple-list-item-content {
+            color: #333333;
+        }
+    }
+}
+

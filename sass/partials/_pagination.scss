@@ -1,0 +1,18 @@
+.pagination {
+    >.active {
+        > span {
+            background-color: $color-primary;
+            color: $color-lighter;
+
+            &:hover {
+                background-color: lighten($color-primary, 10%);
+            }
+        }
+    }
+    >li {
+        >a {
+            color: #333333;
+        }
+    }
+}
+

@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1 blog__post-wrapper">
+            <section class="blog-post">
+                <header>
+                    {{ partial:meta }}
+                    <h1>{{ title }}</h1>
+                    {{ sub_title wrap="h2" }}
+                </header>
+
+                <article class="content">
+            
+                    {{ if intro_image }}
+                        <p><img src="{{ intro_image }}" class="intro-image"></p>
+                    {{ /if }}
+            
+                    {{ content }}
+            
+                    <ul class="tags list-inline">
+                    {{ tags }}
+                        <li><a href="{{ url }}">{{ title }}</a></li>
+                    {{ /tags }}
+                    </ul>
+                </article>
+            
+            </section>    
+        </div>
+    </div>
+</div>
+
+{{ partial:article-footer }}

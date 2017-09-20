@@ -1,0 +1,80 @@
+<div class="section__light-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <header class="page__header">
+                    <h1>Contact</h1>
+                </header>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section__spacing--large">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+
+                {{ content }}
+                
+                {{ form:create in="contact" attr="class:form-horizontal section__spacing--large" }}
+
+                    {{ if errors }}
+                        <div class="alert alert-danger">
+                            {{ errors }}
+                                {{ value }}<br>
+                            {{ /errors }}
+                        </div>
+                    {{ /if }}
+
+                    {{ if success }}
+                        <div class="alert alert-success">
+                            Form was submitted successfully.
+                        </div>
+                    {{ /if }}
+
+                    {{ fields }}
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">{{ display }}</label>
+        
+                        <div class="col-sm-9">
+
+                        {{ if field == 'comment' }}
+                            <textarea name="comment" class="form-control" rows="5">{{ old:comment }}</textarea>
+                        {{ else }}
+                            <input type="text" name="{{ field }}" value="{{ old }}" class="form-control" />
+                        {{ /if }}
+
+                        </div>
+                    </div>
+                    {{ /fields }}
+
+                    <div class="text-center">
+                        <button class="btn btn-primary">Contact Us</button>
+                    </div>
+
+                {{ /form:create }}
+            </div>
+            <div class="col-md-4">
+
+                <div class="feature">
+                    <div class="feature__icon">
+                        <i class="fa fa-envelope-o text-primary font__size-2"></i>
+                    </div>
+                    <div class="feature__content">
+                        <h3>Mail Us Something</h3>
+
+                        <address>Some Address<br />1234 Anywhere<br />Anyplace</address>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section__content--halfway" data-map
+     data-map-zoom="17"
+     data-map-lat="0"
+     data-map-lng="0">
+</div>

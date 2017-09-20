@@ -1,0 +1,41 @@
+.shop__item-container {
+
+    .shop__item-item {
+        display: block;
+        overflow: hidden;
+
+        background-color: #fafafa;
+        color: #333333;
+        margin-bottom: 30px;
+        text-decoration: none;
+        transition: box-shadow 0.1s ease-in-out;
+        cursor: pointer;
+        border: 1px solid #ebebeb;
+
+        &:hover {
+            box-shadow: 0 26.5px 31px -24.5px rgba(0, 0, 0, 0.18);
+        }
+
+        .shop__item-caption {
+            padding: 16px 16px 20px;        
+            font-weight: 200;
+            font-size: 2em;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            max-width: 300px;
+            font-weight: 300;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .shop__item-image {
+            min-height: 250px;
+            max-height: 250px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #ffffff;
+        }
+    }
+}

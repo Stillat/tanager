@@ -1,0 +1,18 @@
+{{ partial:meerkat/comments }}
+
+<footer class="list article__footer">
+    <div class="container">
+        <div class="col-md-12">
+            <h6>Next Up <em>on the</em> Blog</h6>
+            <article class="list">
+                <div class="row">
+                    {{ collection:next in="blog" limit="2" scope="tag" url:not="{url}" }}
+                        <div class="col-md-6">
+                            {{ partial:block }}
+                        </div>
+                    {{ /collection:next }}
+                </div>
+            </article>
+        </div>
+    </div>
+</footer>

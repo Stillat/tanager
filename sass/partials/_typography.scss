@@ -1,0 +1,79 @@
+p, address {
+    font-family: $font-body;
+    font-size: 1.3em;
+    line-height: 1.4em;
+}
+
+footer {
+    p {
+        font-size: 1em;
+    }
+}
+
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6 {
+    font-family: $font-heading;
+}
+
+ul {
+    &.tags {
+        padding-left: 0;
+    }
+}
+
+article {
+    &.content {
+        margin-top: 20px;
+
+        p {
+            font-size: 1.3em;
+            line-height: 1.4em;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+ul {
+    li {
+        font-size: 1.5em;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-weight: 100;
+    }
+}
+
+.control-label {
+    color: #878787;
+}
+
+.font__size-1 {
+    font-size: 1em;
+}
+
+.font__size-2 {
+    font-size: 2em;
+}
+
+.font__size-3 {
+    font-size: 3em;
+}
+
+.font__size-4 {
+    font-size: 4em;
+}
+
+.font__size-5 {
+    font-size: 5em;
+}
+
+code {
+    background-color: #f7f7f7;
+    color: #000000;
+}

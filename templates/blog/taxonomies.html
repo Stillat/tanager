@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <header class="page-header">
+                <h1>Tags</h1>
+                <h2>Blog posts have been organized into the following tags:</h2>
+            </header>
+
+            <div class="row">
+                <div class="col-md-3 no-padding">
+                    <div class="list-group blog__tag-list">
+                        {{ taxonomy:tags sort="title" }}
+                        <a href="{{ url }}" class="list-group-item">{{ title }}</a>
+                        {{ /taxonomy:tags }}
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <section class="site__blog-list no-margin">
+                        <article class="list">
+                            {{# This section is simply getting a random taxonomy to display. #}}
+
+                            {{ taxonomy:tags sort="random" limit="1" }}
+                                
+                                <p>We've randomly selected content from the <a href="{{ url }}">{{ title }}</a> tag for your enjoyment.</p>
+
+                                {{ collection:blog taxonomy:tags="{ default_slug }" sort="random" paginate="true" as="posts" limit="10" }}
+                                    {{ if no_results }}
+                                        <p>No "{{ title }}" posts.</p>
+                                    {{ /if }}
+
+                                    {{ posts scope="tag" }}
+                                        {{ partial:block }}
+                                    {{ /posts }}
+                        
+                                    {{ partial:pagination }}
+                                {{ /collection:blog }}
+                            {{ /taxonomy:tags }}
+                        </article>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

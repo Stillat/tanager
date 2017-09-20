@@ -1,0 +1,22 @@
+<div class="hero-background" style="background-image: url({{ hero_image }})">
+    <div class="overlay"></div>
+    <header>
+        <h1>{{ title }}</h1>
+        {{ sub_title wrap="h2" }}
+    </header>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1 blog__post-wrapper">
+            {{ partial:meta }}
+            <section class="blog-post">
+                <article class="content">
+                    {{ content }}
+                </article>
+            </section>            
+        </div>
+    </div>
+</div>
+
+{{ partial:article-footer }}

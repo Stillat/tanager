@@ -1,0 +1,49 @@
+html, body {
+    height: 100%;
+}
+
+.site__main-wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.color-lighter {
+    color: $color-lighter;
+}
+
+.btn {
+    border-radius: 0px;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.section__spacing {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.section__spacing--large {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.section__content--halfway {
+    height: 55vh;
+}
+
+.section__light-grey {
+    @include section-spacing();
+    background-color: $section-light-grey-background;
+}
+
+.icon-bar {
+    background: #ffffff;
+}

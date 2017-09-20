@@ -1,0 +1,29 @@
+<div class="container section__spacing">
+    <div class="row">
+        <article class="blog__card-list">
+            {{ collection:blog limit="3" scope="tag" }}
+            <div class="col-md-4">
+                {{ partial:card-block }}
+            </div>
+            {{ /collection:blog }}
+        </article>
+    </div>
+</div>
+
+<div class="container section__spacing">
+    <div class="row">
+        <div class="col-md-12">
+            <article class="blog__simple-list">
+                {{ collection:blog offset="3" limit="7" scope="tag" }}
+                <div class="col-md-12">
+                    {{ partial:block }}
+                </div>
+                {{ /collection:blog }}
+            </article>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <a href="/blog" class="btn-rounded">View All</a>
+    </div>
+</div>

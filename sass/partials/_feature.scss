@@ -1,0 +1,23 @@
+.feature {
+    @include clearfix();
+    
+    .feature__icon,
+    .feature__content {
+        display: inline-block;
+
+        /** Hack, but works. */
+        float: left;
+    }
+
+    .feature__icon {
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+    }
+
+    .feature__content {
+        h3 {
+            margin-top: 0;
+        }
+    }
+}

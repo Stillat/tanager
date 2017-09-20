@@ -1,0 +1,232 @@
+.blog__card-list {
+    .blog__card-list-item {
+        border-radius: 3px;
+        background-color: #fafafa;
+        border: 1px solid #ececec;
+        color: #333333;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 20px;
+
+        transition: all 0.1s ease-in-out;
+
+        &:hover {
+            box-shadow: 0 26.5px 31px -24.5px rgba(0, 0, 0, 0.18);
+        }
+    }
+
+    .blog__card-list-item-image {
+        min-height: 230px;
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .blog__card-list-item-content {
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 30px;
+
+        h3 {
+            font-weight: 200;
+        }
+
+        .blog__card-list-item-meta {
+            font-weight: 100;
+            display: inline-block;
+            position: relative;
+            width: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        h3 {
+            font-weight: 100;
+            font-size: 1.5em;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-top: 10px;
+        }
+    }
+}
+
+.blog__simple-list {
+    margin-top: 20px;
+
+    .blog__simple-list-item {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: #333333;
+        font-weight: 100;
+
+        transition: box-shadow 0.1s ease-in-out;
+
+        &:hover {
+            box-shadow: 0 26.5px 31px -24.5px rgba(0, 0, 0, 0.18);
+            text-decoration: underline;
+
+            h3, p {
+                text-decoration: underline;
+            }
+        }
+
+        .blog__simple-list-item-content {
+            h3 {
+                font-weight: 100;
+            }
+        }
+
+        .blog__simple-list-item-meta {
+            margin-bottom: 5px;
+            color: #a2a2a2;
+        }
+
+        .blog__simple-list-item-image {
+            min-height: 130px;
+
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+}
+
+.blog-post {
+    header {
+        h1 {
+            font-size: 3em;
+        }
+
+        h2 {
+            font-size: 1.6em;
+        }
+    }
+}
+
+.meta {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    .name {
+        display: block;
+        color: #333333;
+        font-weight: 500;
+        font-size: 1.2em;
+    }
+}
+
+.hero-background {
+    height: 700px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    position: relative;
+    margin-top: -20px;
+
+    .overlay {
+        height: 700px;
+        width: 100%;
+        position: absolute;
+        background: rgba(0,0,0,0.6);
+    }
+
+    header {
+        position: relative;
+        text-align: center;
+        color: #fff;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        top: 40%;
+
+        h1 {
+            font-size: 4em;
+        }
+
+        h2 {
+            font-size: 3em;
+            font-weight: 100;
+        }
+    }
+}
+
+.site__blog-list {
+    margin-top: 40px;
+}
+
+.blog__post-wrapper {
+    background: #ffffff;
+    margin-top: 20px;
+}
+
+ul {
+    &.tags {
+
+        list-style: none;
+
+        a {
+            display: inline-block;
+            background: rgba(0,0,0,0.1);
+            color: #333333;
+            cursor: pointer;
+            font-size: 13px;
+            padding: 6px 10px;
+            
+        }
+    }
+}
+
+
+.blog__tag-list {
+    padding: 0;
+
+    .list-group-item {
+        border: none;
+        border-left: 2px solid $color-primary;
+
+        &.active {
+            background-color: $color-primary;
+            color: $color-lighter;
+
+            &:hover {
+                border-color: $color-primary;
+            }
+        }
+    }
+
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.list-group-item:last-child {
+    margin-bottom: 0;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+@include breakpoint(xs) {
+    .hero-background {
+        height: 100vh;
+        background-position: center;
+
+        .overlay {
+            height: 100%;
+        }
+
+        header {
+            top: 20%;
+
+            h1 {
+                font-weight: 100;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+        }
+    }
+}

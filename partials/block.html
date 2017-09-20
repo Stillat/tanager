@@ -1,0 +1,52 @@
+<a href="{{ url }}" class="blog__simple-list-item col-md-12">
+    {{ if tag:intro_image || tag:hero_image }}
+
+        <div class="row">
+            <div class="col-md-2">
+                {{ if tag:hero_image }}
+                    <div class="blog__simple-list-item-image" style="background-image: url({{ glide:hero_image }})"></div>
+                
+                {{ elseif tag:intro_image }}
+                    <div class="blog__simple-list-item-image" style="background-image: url({{ glide:intro_image }})"></div>
+                {{ /if }}
+            </div>
+            <div class="col-md-10 blog__simple-list-item-content">
+                <h3>{{ title }}</h3>
+
+                <div class="blog__simple-list-item-meta">
+                    {{ if (date | days_ago) < 21 }}
+                        {{ date | relative }}
+                    {{ elseif (date | format:Y) == now | format:Y }}
+                        {{ date format="M j" }}
+                    {{ else }}
+                        {{ date format="M j, Y" }}
+                    {{ /if }}
+                </div>
+
+                <p>{{ content strip_tags="img|a|p" safe_truncate="150" ensure_right="..." }}</p>
+
+            </div>
+        </div>
+
+    {{ else }}
+
+        <div class="row">
+            <div class="col-md-12 blog__simple-list-item-content">
+                <h3>{{ title }}</h3>
+
+                <div class="blog__simple-list-item-meta">
+                    {{ if (date | days_ago) < 21 }}
+                        {{ date | relative }}
+                    {{ elseif (date | format:Y) == now | format:Y }}
+                        {{ date format="M j" }}
+                    {{ else }}
+                        {{ date format="M j, Y" }}
+                    {{ /if }}
+                </div>
+                <p>{{ content strip_tags="img|a|p|th|tr|thead|table" safe_truncate="150" ensure_right="..." }}</p>
+
+            </div>
+        </div>
+
+    {{ /if }}
+</a>

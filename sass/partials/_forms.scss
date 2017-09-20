@@ -1,0 +1,20 @@
+.form-control {
+    border-radius: 3px;
+    background: #fffefe;
+    border: 1px solid #ececec;
+
+    &:focus {
+        border-color: $color-primary;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+    }
+}
+
+.form__box {
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 40px 40px;
+    background-color: #fafafa;
+}

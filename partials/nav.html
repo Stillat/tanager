@@ -1,0 +1,39 @@
+<nav class="navbar navbar-tundra">
+        <div class="container-fluid">
+    
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-main" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <span class="site__letter-block">{{ site_name | first:1 }}</span>
+                    {{ site_name }}
+                </a>
+            </div>
+    
+            <div class="collapse navbar-collapse" id="nav-main">
+                <ul class="nav navbar-nav">
+                    {{ nav from="/" include_home="true" scope="tag" }}
+                        <li{{ if is_current or is_parent }} class="active"{{ /if }}>
+                            <a href="{{ url }}">{{ tag:nav_title or title }}
+                            </a>
+                        </li>
+                    {{ /nav }}
+                </ul>
+
+                <div class="site__header-auth--not-home">
+                    {{ partial:auth }}
+                </div>
+                <form class="navbar-form navbar-right" role="search" action="{{ link to='search' }}">
+                    <a data-tundra-interact="activate-search" class="btn btn-link color-lighter"><i class="fa fa-search"></i></a>
+                    <div class="form-group">
+                        <input type="text" class="form-control search" name="q" placeholder="Search" value="{{ get:q }}">
+                    </div>
+                </form>
+            </div>
+    
+        </div>
+    </nav>

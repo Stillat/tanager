@@ -1,0 +1,31 @@
+<div class="section__light-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <header class="page__header">
+                    <h1>{{ title }}</h1>
+                    {{ content wrap="h2" }}
+                </header>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="section__spacing--large">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row gallery__item-container">
+                    {{ images }}
+                        <div class="col-md-6 col-lg-4">
+                            <div class="gallery__item-item">
+                                <div class="gallery__item-image" style="background-image: url('{{ value }}')"></div>                                
+                            </div>
+                        </div>
+                    {{ /images }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div

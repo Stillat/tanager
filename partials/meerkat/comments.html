@@ -1,0 +1,23 @@
+<section class="meerkat__comment-section">
+    <div class="container">
+        <div class="col-md-10 col-md-offset-1">
+            <h2>Comments</h2>
+
+            {{ if {meerkat:designer-mode} }}
+            <div class="alert alert-info">
+                <p>Meerkat is running in Designer Mode; the comments displayed below are chosen at random. Any comments that are submitted will not be saved.</p>
+            </div>
+            {{ /if }}
+
+            {{ partial:meerkat/replies }}
+
+            {{ partial:meerkat/thread }}
+
+            {{ if {meerkat:comments-enabled} }}
+                {{ partial:meerkat/form }}
+            {{ else }}
+                <p>New comment submissions are no longer being accepted for this post.</p>
+            {{ /if }}
+        </div>
+    </div>
+</section>

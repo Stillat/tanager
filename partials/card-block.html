@@ -1,0 +1,26 @@
+<a href="{{ url }}" class="blog__card-list-item">
+    {{ if tag:intro_image }}
+        <div class="blog__card-list-item-image" style="background-image: url({{ glide:intro_image }})" />
+    
+        </div>
+    {{ elseif tag:hero_image }}
+        <div class="blog__card-list-item-image" style="background-image: url({{ glide:hero_image }})" />
+
+        </div>
+    {{ /if }}
+
+    <div class="blog__card-list-item-content">
+
+        <span class="blog__card-list-item-meta">
+            {{ if (date | days_ago) < 21 }}
+                {{ date | relative }}
+            {{ elseif (date | format:Y) == now | format:Y }}
+                {{ date format="M j" }}
+            {{ else }}
+                {{ date format="M j, Y" }}
+            {{ /if }}
+        </span>
+
+        <h3>{{ title }}</h3>
+    </div>
+</a>

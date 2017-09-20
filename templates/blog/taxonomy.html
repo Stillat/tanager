@@ -1,0 +1,53 @@
+<div class="section__light-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <header class="page__header">
+                    <h1>{{ title }}</h1>
+                    <h2>{{ content }}</h2>
+                </header>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <section class="site__blog-list">
+            
+                <div class=="row">
+                    <div class="col-md-3 no-padding">
+                        <div class="list-group blog__tag-list">
+                            {{ taxonomy:tags sort="title" }}
+                                {{ if (slug == segment_3) }}
+                                <a href="{{ url }}" class="list-group-item active">{{ title }}</a>
+                                {{ else }}
+                                <a href="{{ url }}" class="list-group-item">{{ title }}</a>
+                                {{ /if }}
+                            {{ /taxonomy:tags }}
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <article class="blog__card-list">
+                            {{ collection:blog taxonomy="true" paginate="true" as="posts" limit="10" }}
+                                {{ if no_results }}
+                                    <p class="lead">No "{{ title }}" posts.</p>
+                                {{ /if }}
+
+                                {{ posts scope="tag" }}
+                                    <div class="col-md-12">
+                                        {{ partial:card-block }}
+                                    </div>
+                                {{ /posts }}
+                    
+                                {{ partial:pagination }}
+                            {{ /collection:blog }}
+                        </article>
+                    </div>
+                </div>
+            
+            </section>
+        </div>
+    </div>
+</div>

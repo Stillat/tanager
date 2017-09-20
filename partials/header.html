@@ -1,0 +1,23 @@
+<div class="container" data-header-manager="calc-height">
+    <div class="row">
+        <div class="col-md-12 text-right" data-header-manager="hide-scrolled">
+            <div class="site__header-auth--home">
+                {{ partial:auth }}        
+            </div>
+        </div>
+        <div class="col-md-12 text-center" data-header-manager="hide-scrolled">
+            <div class="site__header-title">
+                <h1>
+                    <a href="{{ homepage }}">
+                        <span class="site__letter-block">{{ site_name | first:1 }}</span>
+                        {{ site_name }}
+                    </a>
+                </h1>
+                <h2>A simple Statamic theme to get you started</h2>
+            </div>
+        </div>
+        <div class="col-md-12">
+            {{ partial:nav }}
+        </div>
+    </div>
+</div>

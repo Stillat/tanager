@@ -1,0 +1,9 @@
+<ul class="nav navbar-nav navbar-right site__header-auth">
+    {{ if logged_in }}
+        <li><a href="{{ link to='users' }}">Users</a></li>
+        <li><a href="{{ user:logout_url }}">Log out</a></li>
+    {{ else }}
+        <li><a href="{{ link to='login' }}">Log in</a></li>
+        <li><a href="{{ link to='register' }}">Register</a></li>
+    {{ /if }}
+</ul>

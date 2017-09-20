@@ -1,0 +1,43 @@
+<div class="media-list meerkat__comment-list">
+
+    {{ meerkat:responses as="comments" unapproved="false" limit="10" paginate="true" show_hidden="true" }}
+
+        {{ if no_results }}
+            <p>Be the first to leave a reply!</p>
+        {{ /if }}
+
+        {{ comments }}
+        <div class="media meerkat__comment-list-item">
+            <img src="{{ designer_avatar }}" alt="{{ name }}" class="hidden-xs" />
+    
+            <div class="media-body" data-meerkat-comment="{{ id }}">
+                <p>
+                    {{ if {meerkat:designer-mode} }}
+                        <img src="{{ designer_avatar }}" alt="{{ name }}" class="visible-xs meerkat__comment-list-item-avatar--xs" /> <strong>{{ name }}</strong>
+                    {{ else }}
+                        {{# Your Avatar Implementation Here }}
+                    {{ /if }}
+                    <time datetime="{{ date format="Y-m-d H:i" }}">{{ partial:helpers/relative-date }}</time>
+                </p>
+                
+                {{ if (is_deleted) }}
+                    <p><small>This comment was removed.</small></p>
+                {{ else }}
+                    {{ comment strip_tags="img|h1|h2|h3|h4|h5|h6|blockquote|script|cite" }}
+
+                    <div class="meerkat__comment-actions">
+                        <a href="#" data-meerkat-form="reply" data-meerkat-reply-to="{{ id }}"><i class="fa fa-comment-o"></i> Reply</a>
+                    </div>
+                {{ /if }}
+
+                {{ if (has_replies) }}
+                    {{ *recursive comments* }}
+                {{ /if }}
+
+            </div>
+        </div>
+        {{ /comments }}
+
+    {{ /meerkat:responses }}
+
+</div>

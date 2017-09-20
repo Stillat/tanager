@@ -1,0 +1,7 @@
+{{ if (date | days_ago) < 21 }}
+    {{ date | relative }}
+{{ elseif (date | format:Y) == now | format:Y }}
+    {{ date format="M j" }}
+{{ else }}
+    {{ date format="M j, Y" }}
+{{ /if }}

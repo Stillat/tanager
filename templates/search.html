@@ -1,0 +1,48 @@
+<div class="section__light-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <header class="page__header">
+                    <h1>Search Results for "{{ get:q }}"</h1>
+                </header>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section__spacing--large">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            <form role="search" action="{{ link to='search' }}">
+                <div class="form-group">
+                    <input type="text" class="form-control search" name="q" placeholder="Search" value="{{ get:q }}">
+                </div>
+            </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <article class="blog__simple-list">
+                    {{ if {get:q} }}
+                        {{ search:results as="results" }}
+                        
+                            {{ if no_results }}
+                                <p class="lead">No results found.</p>
+                            {{ /if }}
+
+                            {{ results scope="tag" }}
+                                <div class="col-md-12">
+                                    {{ partial:block }}
+                                </div>
+                            {{ /results }}
+
+                        {{ /search:results }}
+                    {{ else }}
+                        <p class="lead">Enter a search query to begin your journey.</p>
+                    {{ /if }}
+                </article>
+            </div>
+        </div>
+    </div>
+</div>

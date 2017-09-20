@@ -1,0 +1,31 @@
+<div class="section__light-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <header class="page__header">
+                    <h1>{{ title }}</h1>
+                    {{ content_raw wrap="h2" }}
+                </header>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section__spacing--large">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row shop__item-container">
+                    {{ collection:things }}
+                        <div class="col-md-6 col-lg-4">
+                            <a href="http://amzn.com/{{ amazon_id }}" class="shop__item-item">
+                                <div class="shop__item-image" style="background-image: url('{{ photo }}')"></div>                                
+                                <h3 class="shop__item-caption">{{ title }}</h3>
+                            </a>
+                        </div>
+                    {{ /collection:things }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

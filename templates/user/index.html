@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <header class="page-header">
+                <h1>Users</h1>
+                <h2>Here are all the registered users.</h2>
+            </header>
+
+            <article>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{ users }}
+                                <tr>
+                                    <td><a href="{{ link to='/users/{ username }' }}">{{ name or username }}</a></td>
+                                    <td>{{ email }}</td>
+                                </tr>
+                            {{ /users }}
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>

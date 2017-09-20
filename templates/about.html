@@ -1,0 +1,28 @@
+<div class="section__light-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <header class="page__header">
+                    <h1>{{ title }}</h1>
+                    {{ sub_title wrap="h2" }}
+                </header>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <section class="regular">
+            
+                <article class="content">
+                    {{ content }}
+                    <h2>Fun Facts</h2>
+                    {{ fun_facts | ul }}
+                </article>
+                
+            </section>
+        </div>
+    </div>
+</div>

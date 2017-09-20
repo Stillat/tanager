@@ -1,0 +1,30 @@
+<div class="section__light-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <header class="page__header">
+                    <h1>{{ title }}</h1>
+                    <h2>{{ content }}</h2>
+                </header>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <article class="blog__simple-list">
+            {{ collection:blog paginate="true" as="posts" limit="5" }}
+
+                {{ posts scope="tag" }}
+                    <div class="col-md-12">
+                        {{ partial:block }}
+                    </div>
+                {{ /posts }}
+
+                {{ partial:pagination }}
+
+            {{ /collection:blog }}
+        </article>
+    </div>
+</div>

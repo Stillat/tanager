@@ -1,0 +1,66 @@
+.meerkat__comment-section {
+    background-color: #f8f8f8;
+    margin-top: 30px;
+
+    h2 {
+        font-weight: 100;
+        font-size: 2.3em;
+    }
+}
+
+.meerkat__comment-list {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #f1f2f3;    
+
+    .meerkat__comment-list-item {
+        border-bottom: 1px solid #f1f2f3;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        time {
+            font-weight: 100;
+        }
+
+        p:not(:first-of-type) {
+            font-weight: 100;
+            font-size: 1.2em;
+            line-height: 1.5em;
+        }
+
+        img {
+            border-radius: 50%;
+            width: 40px;
+            vertical-align: middle;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .meerkat__comment-actions {
+            margin-bottom: 10px;
+
+            form {
+                margin-top: 10px;
+                padding: 5px;
+            }
+        }
+    }
+}
+
+.meerkat__comment-list-item-avatar--xs {
+    width: 22px !important;
+    margin-right: 5px !important;
+}
+
+.meerkat__comment-form {
+    margin-bottom: 30px;
+}
+
+@include breakpoint(xs) {
+    [data-meerkat-comment].media-body {
+        display: inline-block;
+        width: initial;
+    }
+}
