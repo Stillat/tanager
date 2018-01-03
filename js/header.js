@@ -16,7 +16,7 @@
 
         siteHeader: $('.site__header'),
         originalBodyPaddingTop: $('body').css('padding-top'),
-        shrinkOn: $('[data-header-manager="calc-height"]').height() * 2,
+        shrinkOn: $('[data-header-manager="calc-height"]').height() * 3,
 
         hideElements: function () {
             $('[data-header-manager="hide-scrolled"]').fadeOut(100);
